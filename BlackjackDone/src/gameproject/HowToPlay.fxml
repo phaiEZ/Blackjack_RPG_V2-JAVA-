@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane id="AnchorPane" prefHeight="550.0" prefWidth="830.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gameproject.HowToPlayController">
+   <children>
+      <ImageView fitHeight="550.0" fitWidth="830.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../image/HowToPlay.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="back" fitHeight="20.0" fitWidth="100.0" layoutX="32.0" layoutY="496.0" pickOnBounds="true" preserveRatio="true" visible="false">
+         <image>
+            <Image url="@../image/back1.png" />
+         </image>
+      </ImageView>
+      <Button layoutX="32.0" layoutY="495.0" mnemonicParsing="false" onAction="#onBack" onMouseEntered="#moveMouseEntered" onMouseExited="#moveMouseExited" opacity="0.0" prefHeight="25.0" prefWidth="103.0" text="back" />
+   </children>
+</AnchorPane>

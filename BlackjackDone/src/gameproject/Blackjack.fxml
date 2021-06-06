@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="550.0" prefWidth="520.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gameproject.BlackjackController">
+   <children>
+      <ImageView fitHeight="550.0" fitWidth="830.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../image/fight.png" />
+         </image>
+      </ImageView>
+      <Label fx:id="pointEnemy" layoutX="78.0" layoutY="145.0" prefHeight="32.0" prefWidth="66.0" text="??/21">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </Label>
+      <Label fx:id="pointPlayer" layoutX="664.0" layoutY="353.0" prefHeight="34.0" prefWidth="65.0" text="00/21">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </Label>
+      <HBox fx:id="playerCard" layoutX="276.0" layoutY="388.0" prefHeight="110.0" prefWidth="462.0" spacing="20.0" AnchorPane.bottomAnchor="35.0" AnchorPane.leftAnchor="285.0">
+         <children>
+            <Rectangle fx:id="Card1" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="95.0" stroke="BLACK" strokeType="INSIDE" visible="false" width="76.0" />
+            <Rectangle fx:id="Card2" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="95.0" stroke="BLACK" strokeType="INSIDE" visible="false" width="76.0" />
+            <Rectangle fx:id="Card3" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="95.0" stroke="BLACK" strokeType="INSIDE" visible="false" width="76.0" />
+            <Rectangle fx:id="Card4" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="95.0" stroke="BLACK" strokeType="INSIDE" visible="false" width="76.0" />
+            <Rectangle fx:id="Card5" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="95.0" stroke="BLACK" strokeType="INSIDE" visible="false" width="76.0" />
+         </children>
+      </HBox>
+      <HBox fx:id="enemyCard" layoutX="60.0" layoutY="47.0" prefHeight="88.0" prefWidth="462.0" spacing="20.0" AnchorPane.bottomAnchor="398.0" AnchorPane.leftAnchor="60.0" AnchorPane.rightAnchor="278.6" AnchorPane.topAnchor="45.0">
+         <children>
+            <Rectangle fx:id="enemy1" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="87.0" stroke="BLACK" strokeType="INSIDE" visible="false" width="76.0" />
+            <Rectangle fx:id="enemy2" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="87.0" stroke="BLACK" strokeType="INSIDE" visible="false" width="76.0" />
+            <Rectangle fx:id="enemy3" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="87.0" stroke="BLACK" strokeType="INSIDE" visible="false" width="76.0" />
+            <Rectangle fx:id="enemy4" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="87.0" stroke="BLACK" strokeType="INSIDE" visible="false" width="76.0" />
+            <Rectangle fx:id="enemy5" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="87.0" stroke="BLACK" strokeType="INSIDE" visible="false" width="76.0" />
+         </children>
+      </HBox>
+      <ImageView fx:id="hitView" fitHeight="26.0" fitWidth="98.0" layoutX="130.0" layoutY="405.0" pickOnBounds="true" preserveRatio="true" visible="false">
+         <image>
+            <Image url="@../image/hit2.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="standView" fitHeight="26.0" fitWidth="98.0" layoutX="129.0" layoutY="434.0" pickOnBounds="true" preserveRatio="true" visible="false">
+         <image>
+            <Image url="@../image/stand2.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="leaveView" fitHeight="26.0" fitWidth="98.0" layoutX="130.0" layoutY="462.0" pickOnBounds="true" preserveRatio="true" visible="false">
+         <image>
+            <Image url="@../image/leave2.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="drawCardButton" layoutX="129.0" layoutY="403.0" mnemonicParsing="false" onAction="#drawCardButton" onMouseEntered="#drawCardButtonEntered" onMouseExited="#drawCardButtonExited" opacity="0.0" prefHeight="26.0" prefWidth="97.0" text="drawCard" />
+      <Button fx:id="standButton" layoutX="129.0" layoutY="434.0" mnemonicParsing="false" onAction="#standButton" onMouseEntered="#standButtonEntered" onMouseExited="#standButtonExited" opacity="0.0" prefHeight="26.0" prefWidth="98.0" text="stand" />
+      <Button fx:id="leaveButton" layoutX="130.0" layoutY="462.0" mnemonicParsing="false" onAction="#leaveButton" onMouseEntered="#leaveButtonEntered" onMouseExited="#leaveButtonExited" opacity="0.0" prefHeight="26.0" prefWidth="98.0" text="leave" />
+      <Label fx:id="playWin" layoutX="263.0" layoutY="193.0" prefHeight="95.0" prefWidth="319.0" text="You Win" textFill="WHITE" visible="false">
+         <font>
+            <Font name="8BIT WONDER Nominal" size="47.0" />
+         </font>
+      </Label>
+      <Label fx:id="playLose" layoutX="241.0" layoutY="193.0" prefHeight="95.0" prefWidth="362.0" text="You lose" textFill="WHITE" visible="false">
+         <font>
+            <Font name="8BIT WONDER Nominal" size="47.0" />
+         </font>
+      </Label>
+      <Label fx:id="playDraw" layoutX="299.0" layoutY="193.0" prefHeight="95.0" prefWidth="228.0" text="Draw" textFill="WHITE" visible="false">
+         <font>
+            <Font name="8BIT WONDER Nominal" size="47.0" />
+         </font>
+      </Label>
+      <Label fx:id="playblackjack" layoutX="263.0" layoutY="257.0" prefHeight="95.0" prefWidth="319.0" text="Blackjack" textFill="WHITE" visible="false">
+         <font>
+            <Font name="8BIT WONDER Nominal" size="34.0" />
+         </font>
+      </Label>
+      <ImageView fx:id="leaveView1" fitHeight="133.0" fitWidth="133.0" layoutX="603.0" layoutY="79.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../image/spider_monster.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="leaveView11" fitHeight="133.0" fitWidth="161.0" layoutX="64.0" layoutY="229.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../image/2-Recovered.png" />
+         </image>
+      </ImageView>
+      <Label fx:id="playblackjack1" layoutX="620.0" layoutY="39.0" prefHeight="42.0" prefWidth="117.0" text="Spider" textFill="WHITE">
+         <font>
+            <Font name="8BIT WONDER Nominal" size="18.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
